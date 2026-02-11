@@ -22,7 +22,7 @@ Customers access the menu instantly via QR code, while administrators manage all
 Optimized for mobile-first interaction.  
 Customers scan the QR code and instantly access a fast, responsive, and visually clean menu interface.
 
-![Mobile Mockup](PhonePages.png)
+![Mobile Mockup](./assets/PhonePages.png)
 
 ---
 
