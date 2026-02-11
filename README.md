@@ -29,9 +29,14 @@ Customers access the menu instantly via QR code, while administrators manage all
 
 ## Mobile Views
 
-![Mobile Mockup](./assets/PhonePages.png)
-
----
+<div align="center">
+  <img 
+    src="./assets/PhonePages.png" 
+    alt="Mobile Mockup" 
+    width="550" 
+    height="1000"
+  >
+</div>
 
 </div>
 
@@ -74,6 +79,8 @@ Only authorized users can:
 All authentication and session handling are securely managed through Firebase.
 
 ---
+<div align="center">
 
-⭐ Support ⭐
-If you like the project, do not forget to give a star 
+## ⭐ Support ⭐ 
+⋆⭒˚.⋆ If you like this project, do not forget to give a star ⋆⭒˚.⋆
+</div>
