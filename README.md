@@ -70,4 +70,3 @@ All authentication and session handling are securely managed through Firebase.
 
 ---
 
-# 🧠 System Architecture
