@@ -30,7 +30,7 @@ Customers scan the QR code and instantly access a fast, responsive, and visually
 
 The desktop layout provides a wider structured view and full administrative control through the dashboard.
 
-![Desktop Mockup](LaptopPages.png)
+![Desktop Mockup](./assets/LaptopPages.png)
 
 ---
 
