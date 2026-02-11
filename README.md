@@ -1,13 +1,77 @@
-# RIstanbulCafeMenu A cloud-based, fully responsive **QR Digital Café Menu System** built with **HTML, CSS, JavaScript, and Firebase**. This project replaces traditional printed menus with a dynamic, scalable, and real-time managed digital solution designed for cafés, restaurants, and hospitality businesses. --- ## Live Digital Experience Customers scan a QR code and instantly access the café menu through their mobile browser. No application download required. * Fully responsive (Mobile / Tablet / Desktop) * Real-time database integration * Fast and lightweight structure * Cloud-hosted infrastructure --- ## Built With * HTML5 * CSS3 * Vanilla JavaScript * Firebase Firestore * Firebase Hosting --- ## Core Features ### Customer Interface * QR-based instant access * Mobile-first responsive design * Dynamic category-based menu listing * Real-time content updates * Modern and clean UI * Optimized loading performance * Scalable data rendering structure * Structured product categorization * Automatic content synchronization * Secure read-only database rules --- ### Admin Panel * Secure admin authentication system * Add / Edit / Delete products * Category management * Real-time Firestore synchronization * Dynamic content updates without redeployment * Structured database schema * Image-ready system architecture * Input validation & basic error handling * Cloud-based centralized management --- ## Desktop View ![Desktop Mockup](./mockups/laptop.png) --- ## Mobile View ![Mobile Mockup](./mockups/phone.png) --- ## System Architecture
-Customer → QR Scan → Web Application
-                         ↓
-                    Firebase Firestore
-                         ↑
-                    Admin Panel
-This architecture ensures: * Instant updates * No server maintenance * High availability * Scalable infrastructure * Low operational cost --- ## Installation
-bash
-git clone https://github.com/lighlymoon/RIstanbulCafeMenu.git
-cd RIstanbulCafeMenu
-Then configure your Firebase credentials inside:
-firebase-config.js
-Deploy via Firebase Hosting or run locally. --- ## Project Vision RIstanbulCafeMenu was developed as a real-world digital transformation project for hospitality businesses. The aim is to provide a scalable, maintainable, and professional digital menu infrastructure. --- ## Author GitHub: https://github.com/lighlymoon --- If you find this project useful, consider giving it a star.
+Below is the complete, professional, well-structured README.md content in English, ready to paste directly into your repository.
+
+# RIstanbulCafeMenu
+
+## Digital QR Menu & Admin Management System
+
+RIstanbulCafeMenu is a modern web-based digital menu solution designed for cafés and restaurants.  
+Customers access the menu instantly via QR code, while administrators manage all content through a secure dashboard powered by Firebase.
+
+---
+
+## 🌐 Live Demo
+
+👉 **[Click here to see the live demo](https://lightlymoon.github.io/RIstanbulCafeMenu/)**
+
+---
+
+# 📱 User Interface Preview
+
+## Mobile Experience
+
+Optimized for mobile-first interaction.  
+Customers scan the QR code and instantly access a fast, responsive, and visually clean menu interface.
+
+![Mobile Mockup](PhonePages.png)
+
+---
+
+## Desktop Experience
+
+The desktop layout provides a wider structured view and full administrative control through the dashboard.
+
+![Desktop Mockup](LaptopPages.png)
+
+---
+
+# 🚀 Features
+
+## Customer Side (Frontend)
+
+- QR code direct access
+- Dynamic category structure
+- Product images and descriptions
+- Multi-language support
+- Responsive design
+- Real-time data updates
+- Fast loading performance
+
+---
+
+## Admin Panel (Dashboard)
+
+- Secure login system (Firebase Authentication)
+- Category management
+- Product creation, editing, and deletion
+- Image upload support (Firebase Storage)
+- Real-time synchronization with Firestore
+- Clean and structured dashboard interface
+
+---
+
+# 🔐 Authentication System
+
+The admin panel is protected using **Firebase Authentication**.
+
+Only authorized users can:
+
+- Access the dashboard
+- Modify menu content
+- Upload or delete product data
+- Manage categories
+
+All authentication and session handling are securely managed through Firebase.
+
+---
+
+# 🧠 System Architecture
