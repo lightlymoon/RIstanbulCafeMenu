@@ -46,12 +46,9 @@ Customers access the menu instantly via QR code, while administrators manage all
 
 - QR code direct access
 - Dynamic category structure
-- Product images and descriptions
 - Multi-language support
 - Responsive design
 - Real-time data updates
-- Fast loading performance
-
 ---
 
 ## Admin Panel (Dashboard)
@@ -59,7 +56,6 @@ Customers access the menu instantly via QR code, while administrators manage all
 - Secure login system (Firebase Authentication)
 - Category management
 - Product creation, editing, and deletion
-- Image upload support (Firebase Storage)
 - Real-time synchronization with Firestore
 - Clean and structured dashboard interface
 
@@ -84,3 +80,7 @@ All authentication and session handling are securely managed through Firebase.
 ## ⭐ Support ⭐ 
 ⋆⭒˚.⋆ If you like this project, do not forget to give a star ⋆⭒˚.⋆
 </div>
+
+<p align="center">
+  ⚠️ This README is uniquely designed by <strong>@lightlymoon.</strong>
+</p>
