@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <title>Admin Giriş</title>
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+  <div class="login-card">
+    <h3 class="login-title">Admin Giriş</h3>
+    <input id="user-email" class="login-input" placeholder="Email">
+    <input id="user-pass" class="login-input" type="password" placeholder="Şifre">
+    <button class="login-button" onclick="login()">Giriş</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBf6m1mxZ2DexCy0jUc9Du00FzSpMZO4Jg",
+      authDomain: "cafemenu-1ff06.firebaseapp.com",
+      projectId: "cafemenu-1ff06"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    const emailInput = document.getElementById("user-email");
+    const passInput = document.getElementById("user-pass");
+
+    // Email inputunda Enter → şifreye geç
+    emailInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        passInput.focus();
+      }
+    });
+
+    // Şifre inputunda Enter → giriş yap
+    passInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        login();
+      }
+    });
+
+    function login() {
+      const email = emailInput.value;
+      const pass = passInput.value;
+
+      if (!email || !pass) {
+        alert("Email ve şifre gerekli!");
+        return;
+      }
+
+      auth.signInWithEmailAndPassword(email, pass)
+        .then(() => {
+          alert("Giriş başarılı!");
+          window.location.href = "admin.html";
+        })
+        .catch(err => alert("Hata: " + err.message));
+    }
+
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        window.location.href = "admin.html";
+      }
+    });
+  </script>
+</body>
+</html>

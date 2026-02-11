@@ -1,0 +1,124 @@
+:root {
+  --bg: #DAD7CD;
+  --soft: #A3B18A;
+  --main: #588157;
+  --dark: #345A40;
+  --black: #344E41;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--bg), var(--soft));
+  overflow: hidden;
+  position: relative;
+}
+
+body::before, body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: float 6s ease-in-out infinite;
+}
+
+body::before {
+  width: 300px;
+  height: 300px;
+  background: var(--main);
+  top: -50px;
+  left: -50px;
+}
+
+body::after {
+  width: 400px;
+  height: 400px;
+  background: var(--dark);
+  bottom: -100px;
+  right: -100px;
+  animation-duration: 8s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(45deg); }
+}
+
+.login-card {
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-title {
+  color: var(--dark);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 2px solid var(--soft);
+  border-radius: 12px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: var(--main);
+  box-shadow: 0 0 10px rgba(88,129,87,0.3);
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 12px;
+  background: var(--main);
+  color: var(--white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: var(--dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media(max-width: 400px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+  }
+  .login-title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="./assets/logo.png">
+<title>Real Istanbul Cafe Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<header class="header">
+  <div class="brand">
+    <span class="logo">☕</span>
+    <div>
+      <h1>ʀᴇᴀʟ ɪꜱᴛᴀɴʙᴜʟ ᴄᴀꜰᴇ</h1>
+      <h3 id="title">Taze ve Günlük</h3>
+    </div>
+  </div>
+
+  <div>
+    <img class="center-logo" src="./assets/logo.png" alt="menulogo">
+  </div>
+
+  <div class="actions">
+    <div class="lang-group">
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+
+    <div class="wp-container">
+      <img class="WpIcon" src="./assets/whatsappIcon.png" alt="WhatsApp">
+      <a class="number" href="tel:+905000000000">+90 500 000 00 00</a>
+    </div>
+  </div>
+</header>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="categories">
+      <button id="cat-all" onclick="filter('all')">Tümü</button>
+      <button id="cat-drinks" onclick="filter('drinks')">İçecek</button>
+      <button id="cat-food" onclick="filter('food')">Yiyecek</button>
+      <button id="cat-dessert" onclick="filter('dessert')">Tatlı</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="products" id="list"></div>
+  </main>
+</div>
+
+<center>
+  <footer class="footer" id="footer-text">
+    © 2026 Real İstanbul Cafe Menu • Dijital Menü Sistemi • <br> Nuray Guliyeva Tarafından Tasarlanmış ve Geliştirilmiştir.
+  </footer>
+</center>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>

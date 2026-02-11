@@ -1,0 +1,93 @@
+:root {
+  --bg: #F5F1E9;
+  --soft: #E8E3D9;
+  --main: #C9B99E;
+  --dark: #6D5F4D;
+  --black: #4B4435;
+  --accent: #D9B382;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+}
+
+body {
+  min-height: 100vh;
+  padding: 40px;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+.panel-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
+.panel-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 18px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: var(--soft);
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+textarea.panel-input { resize: none; }
+
+.panel-button {
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: var(--black);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.panel-button:hover {
+  background: var(--dark);
+  color: var(--bg);
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.product-item {
+  background: var(--soft);
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  transition: background 0.2s;
+}
+
+.product-item:hover {
+  background: cadetblue;
+  color: var(--bg);
+}
+
+.product-item b { display: block; margin-bottom: 8px; }
+.product-item p { margin-bottom: 10px; }
+
+.product-item button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.product-item button:hover { background: var(--dark); color: var(--bg); }

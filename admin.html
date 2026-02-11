@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+  <div class="admin-panel">
+    <h3 class="panel-title">Ürün Ekle / Düzenle</h3>
+    <input id="product-tr" class="panel-input" placeholder="Ürün TR">
+    <input id="product-en" class="panel-input" placeholder="Ürün EN">
+    <input id="product-price" class="panel-input" placeholder="Fiyat">
+    <select id="product-cat" class="panel-input">
+      <option value="hot">Sıcak</option>
+      <option value="cold">Soğuk</option>
+      <option value="food">Yiyecek</option>
+      <option value="dessert">Tatlı</option>
+    </select>
+    <textarea id="product-details" class="panel-input" placeholder="İçindekiler veya çeşitler" rows="3"></textarea>
+    <button class="panel-button" onclick="addProduct()">Kaydet</button>
+
+    <hr>
+
+    <h3 class="panel-title">Ürünler</h3>
+    <div id="product-list" class="product-list"></div>
+
+    <button class="panel-button logout-button" onclick="logout()">Çıkış Yap</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBf6m1mxZ2DexCy0jUc9Du00FzSpMZO4Jg",
+      authDomain: "cafemenu-1ff06.firebaseapp.com",
+      projectId: "cafemenu-1ff06"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    let editId = null;
+
+    auth.onAuthStateChanged(user => {
+      if (!user) window.location.href = "login.html";
+      else loadProducts();
+    });
+
+    function logout() {
+      auth.signOut().then(() => window.location.href = "login.html");
+    }
+
+    function addProduct() {
+      const tr = document.getElementById("product-tr").value;
+      const en = document.getElementById("product-en").value;
+      const price = Number(document.getElementById("product-price").value);
+      const cat = document.getElementById("product-cat").value;
+      const details = document.getElementById("product-details").value;
+
+      if (!tr || !en || !price) return alert("Tüm zorunlu alanları doldurun!");
+
+      const data = { tr, en, price, cat, details };
+
+      if (editId) {
+        db.collection("products").doc(editId).update(data)
+          .then(() => { editId = null; clearForm(); });
+      } else {
+        db.collection("products").add(data).then(() => clearForm());
+      }
+    }
+
+    function clearForm() {
+      document.getElementById("product-tr").value = "";
+      document.getElementById("product-en").value = "";
+      document.getElementById("product-price").value = "";
+      document.getElementById("product-cat").value = "hot";
+      document.getElementById("product-details").value = "";
+    }
+
+    function loadProducts() {
+      const list = document.getElementById("product-list");
+      db.collection("products").onSnapshot(snap => {
+        list.innerHTML = "";
+        snap.forEach(doc => {
+          const p = { id: doc.id, ...doc.data() };
+          const div = document.createElement("div");
+          div.className = "product-item";
+          div.innerHTML = `
+            <b>${p.tr} / ${p.en}</b> - ${p.price} ₺
+            <p>${p.details || ""}</p>
+            <button onclick="editProduct('${p.id}','${p.tr}','${p.en}',${p.price},'${p.cat}','${p.details ? p.details.replace(/'/g,"\\'") : ""}')">✏️ Düzenle</button>
+            <button onclick="deleteProduct('${p.id}')">🗑️ Sil</button>
+          `;
+          list.appendChild(div);
+        });
+      });
+    }
+
+    function editProduct(id, tr, en, price, cat, details) {
+      editId = id;
+      document.getElementById("product-tr").value = tr;
+      document.getElementById("product-en").value = en;
+      document.getElementById("product-price").value = price;
+      document.getElementById("product-cat").value = cat;
+      document.getElementById("product-details").value = details;
+    }
+
+    function deleteProduct(id) {
+      if (!confirm("Silmek istiyor musunuz?")) return;
+      db.collection("products").doc(id).delete();
+    }
+  </script>
+</body>
+</html>
