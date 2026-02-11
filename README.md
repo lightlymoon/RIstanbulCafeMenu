@@ -17,22 +17,18 @@ Customers access the menu instantly via QR code, while administrators manage all
 
 # 📱 User Interface Preview
 
-## Mobile Experience
+## Desktop Views 
+![Desktop Mockup](./assets/LaptopPages.png)
 
-Optimized for mobile-first interaction.  
-Customers scan the QR code and instantly access a fast, responsive, and visually clean menu interface.
+---
+
+## Mobile Views
 
 ![Mobile Mockup](./assets/PhonePages.png)
 
 ---
 
-## Desktop Experience
 
-The desktop layout provides a wider structured view and full administrative control through the dashboard.
-
-![Desktop Mockup](./assets/LaptopPages.png)
-
----
 
 # 🚀 Features
 
