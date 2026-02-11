@@ -1,48 +1,83 @@
-<div align="center">
 
-# RIstanbulCafeMenu
-### Cloud-Based QR Digital Café Menu System
+## Architectural Characteristics
 
-A production-ready, serverless, real-time digital menu infrastructure  
-designed for modern hospitality businesses.
+- Serverless cloud infrastructure
+- Real-time database synchronization
+- Stateless frontend architecture
+- Centralized content management
+- Globally distributed hosting via Firebase CDN
+- High availability by design
+- Horizontally scalable data model
 
-<br>
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-00C853?style=for-the-badge)](https://your-live-demo-link.com)
-[![Firebase](https://img.shields.io/badge/Firebase-Firestore-FFCA28?style=for-the-badge&logo=firebase)]
-[![Architecture](https://img.shields.io/badge/Architecture-Serverless-blue?style=for-the-badge)]
-
-</div>
+This architecture ensures minimal operational overhead while maintaining performance and reliability.
 
 ---
 
-# 1. Introduction
+# 4. Technology Stack
 
-RIstanbulCafeMenu is a cloud-based QR digital menu platform developed to modernize menu management within the hospitality industry.
+## Frontend Layer
 
-The system eliminates printed menus and replaces them with a centralized, real-time managed web application powered by Firebase infrastructure.
+- HTML5 (Semantic Structure)
+- CSS3 (Responsive Design / Mobile-First Approach)
+- Vanilla JavaScript (Modular and Maintainable Code Structure)
 
-Customers scan a QR code and instantly access the live menu through their browser.  
-No installation, no app dependency, no manual updates.
+## Backend & Cloud Infrastructure
 
-This project demonstrates structured frontend architecture, scalable NoSQL modeling, and serverless deployment principles.
-
----
-
-# 2. Problem Statement
-
-Traditional printed menus introduce:
-
-- Recurring printing costs  
-- Operational inefficiencies  
-- Delayed content updates  
-- Inconsistent customer experience  
-- Hygiene concerns in physical handling  
-
-RIstanbulCafeMenu addresses these issues through a centralized digital infrastructure that enables real-time control and scalable deployment.
+- Firebase Firestore (NoSQL Real-Time Database)
+- Firebase Authentication (Admin Security Layer)
+- Firebase Hosting (CDN-Based Global Deployment)
 
 ---
 
-# 3. System Overview
+# 5. Core Functional Modules
 
-## Customer Flow
+## 5.1 Customer Interface
+
+- QR-based instant access (No app installation required)
+- Fully responsive UI (Mobile / Tablet / Desktop)
+- Dynamic category-based rendering
+- Real-time Firestore data streaming
+- Optimized loading performance
+- Structured product categorization
+- Secure read-only database access rules
+- Automatic content synchronization
+
+---
+
+## 5.2 Administrative Panel
+
+- Secure authentication system
+- Add / Edit / Delete product operations (CRUD)
+- Category management
+- Structured Firestore document schema
+- Real-time updates without redeployment
+- Input validation and basic error handling
+- Cloud-based centralized control system
+- Extensible architecture for image and media support
+
+---
+
+# 6. Database Design Considerations
+
+The system uses a structured Firestore document model optimized for:
+
+- Category-based querying
+- Scalable product listing
+- Low-latency read operations
+- Clean separation of concerns
+- Efficient rendering on the frontend
+
+Security rules are configured to:
+
+- Allow public read access for customers
+- Restrict write operations to authenticated admin users
+
+---
+
+# 7. Installation & Deployment
+
+## 7.1 Clone Repository
+
+```bash
+git clone https://github.com/lighlymoon/RIstanbulCafeMenu.git
+cd RIstanbulCafeMenu
